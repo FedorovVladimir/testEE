@@ -6,7 +6,7 @@
 <body>
 
 <form action="main.jsp" method="POST">
-    <label><input type="text" name="input_text"/></label>
+    <label><input type="text" name="input_text" required/></label>
     <input type="submit" value="submit"/>
 </form>
 
