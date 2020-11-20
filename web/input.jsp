@@ -5,66 +5,44 @@
 </head>
 <body>
 
-<form action="${pageContext.request.contextPath}/calc" method="GET">
+<form action="${pageContext.request.contextPath}/" method="POST">
     <p>
         <%
-            if (request.getAttribute("message_1") != null) {
-                out.print(request.getAttribute("message_1"));
+            if (request.getAttribute("login") != null) {
+                out.print(request.getAttribute("login"));
             }
         %>
     </p>
-    <label>Слагаемое 1:
-        <input type="text" name="input_text_1"
-               value="<% if (request.getAttribute("input_text_1") != null) {
-                   out.print(request.getAttribute("input_text_1"));
-               }%>"/>
+    <label>Login:
+        <input type="text" name="input_login"
+               value="<% if (request.getAttribute("input_login") != null) {
+                   out.print(request.getAttribute("input_login"));
+               }%>" required/>
     </label><br>
-    <label>Слагаемое 2:
-        <input type="text" name="input_text_2"
-               value="<%if (request.getAttribute("input_text_2") != null) {
-                   out.print(request.getAttribute("input_text_2"));
-               }%>"/>
+    <label>Password:
+        <input type="password" name="input_psw"
+               value="<%if (request.getAttribute("input_psw") != null) {
+                   out.print(request.getAttribute("input_psw"));
+               }%>" required/>
     </label><br>
-    <p>
-        <%
-            if (request.getAttribute("sum") != null) {
-                out.print("Сумма: " + request.getAttribute("sum"));
-            }
-        %>
-    </p>
-    <input type="submit" value="сложить"/>
-    <input type="reset" value="очистить"/>
+    <input type="submit" value="login"/>
 </form>
 
-<form action="${pageContext.request.contextPath}/calc" method="POST">
+<form action="${pageContext.request.contextPath}/" method="POST">
+    <label>Login:
+        <input type="text" name="input_login"
+               value="<% if (request.getAttribute("input_login") != null) {
+                   out.print(request.getAttribute("input_login"));
+               }%>" required/>
+    </label>
     <p>
         <%
-            if (request.getAttribute("message_2") != null) {
-                out.print(request.getAttribute("message_2"));
+            if (request.getAttribute("message") != null) {
+                out.print(request.getAttribute("message"));
             }
         %>
     </p>
-    <label>Множитель 1:
-        <input type="text" name="input_text_3"
-               value="<% if (request.getAttribute("input_text_3") != null) {
-                   out.print(request.getAttribute("input_text_3"));
-               }%>"/>
-    </label><br>
-    <label>Множитель 2:
-        <input type="text" name="input_text_4"
-               value="<%if (request.getAttribute("input_text_4") != null) {
-                   out.print(request.getAttribute("input_text_4"));
-               }%>"/>
-    </label><br>
-    <p>
-        <%
-            if (request.getAttribute("mul") != null) {
-                out.print("Произведение: " + request.getAttribute("mul"));
-            }
-        %>
-    </p>
-    <input type="submit" value="умножить"/>
-    <input type="reset" value="очистить"/>
+    <input type="submit" value="get message"/>
 </form>
 
 </body>
