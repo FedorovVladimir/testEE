@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>myServlet</servlet-name>
-        <servlet-class>ru.MyServlet</servlet-class>
+        <servlet-class>ru.ServletIndex</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>myServlet</servlet-name>

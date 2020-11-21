@@ -5,44 +5,18 @@
 </head>
 <body>
 
-<form action="${pageContext.request.contextPath}/" method="POST">
-    <p>
-        <%
-            if (request.getAttribute("login") != null) {
-                out.print(request.getAttribute("login"));
-            }
-        %>
-    </p>
-    <label>Login:
-        <input type="text" name="input_login"
-               value="<% if (request.getAttribute("input_login") != null) {
-                   out.print(request.getAttribute("input_login"));
-               }%>" required/>
-    </label><br>
-    <label>Password:
-        <input type="password" name="input_psw"
-               value="<%if (request.getAttribute("input_psw") != null) {
-                   out.print(request.getAttribute("input_psw"));
-               }%>" required/>
-    </label><br>
-    <input type="submit" value="login"/>
+<form action="${pageContext.request.contextPath}/text" method="POST">
+    <label>Input text message:
+        <input type="text" name="input_text_message" required/>
+    </label>
+    <input type="submit" value="send"/>
 </form>
 
-<form action="${pageContext.request.contextPath}/" method="POST">
-    <label>Login:
-        <input type="text" name="input_login"
-               value="<% if (request.getAttribute("input_login") != null) {
-                   out.print(request.getAttribute("input_login"));
-               }%>" required/>
+<form action="${pageContext.request.contextPath}/number" method="POST">
+    <label>Input number message:
+        <input type="number" name="input_number_message" required/>
     </label>
-    <p>
-        <%
-            if (request.getAttribute("message") != null) {
-                out.print(request.getAttribute("message"));
-            }
-        %>
-    </p>
-    <input type="submit" value="get message"/>
+    <input type="submit" value="send"/>
 </form>
 
 </body>
